@@ -40,9 +40,13 @@ function mapValueToColour(val) {
     // Otherwise map it out of 3.0 using a lerp
     var diff = (absd / 3.0);
 
-    var lerped = (1.0 - (diff)) * 255;
+    if(diff < 0.1) {
+        return "#fff"; // solid white.
+    }
 
-    return "rgb(255, " + lerped + ", " + lerped + ")";
+    // Else lerp red
+    var lerped = (1.0 - (diff)) * 255;
+    return "rgb(" + lerped + ", 0, 0)";
 }
 
 function getTable(assoc) {
@@ -71,7 +75,7 @@ function getTable(assoc) {
         $.each(tireWidth, function(j, differential) {
             var rounded = differential.toFixed(2);
             var bgcolor = mapValueToColour(differential);
-            $("<td>").text(rounded).attr('background-color', bgcolor).appendTo(r);
+            $("<td>").text(rounded).attr('bgcolor', bgcolor).appendTo(r);
         });
         r.appendTo(t);
     });

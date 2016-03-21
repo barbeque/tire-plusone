@@ -46,7 +46,7 @@ function mapValueToColour(val) {
 
     // Else lerp red
     var lerped = (1.0 - (diff)) * 255;
-    var redInHex = lerped.toString(16);
+    var redInHex = parseInt(lerped.toFixed()).toString(16);
     if(redInHex.length < 2) {
         redInHex = "0" + redInHex; // pad
     }

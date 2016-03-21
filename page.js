@@ -22,11 +22,11 @@ function generateTable(oldWidth, oldRatio, oldWheel, newWheel) {
     }
 
     // Write it out to the dom
-    var html = getTableHtml(calculations);
+    var html = getTable(calculations);
     $("results").append(html);
 }
 
-function getTableHtml(assoc) {
+function getTable(assoc) {
     // Probably breaks old browsers...
     var tireWidths = Object.keys(assoc);
 
@@ -46,7 +46,7 @@ function getTableHtml(assoc) {
         r.appendTo(t);
     });
 
-    return t.html();
+    return t;
 }
 
 $("#goButton").on("click", function(e) {

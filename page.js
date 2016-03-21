@@ -40,13 +40,13 @@ function mapValueToColour(val) {
     // Otherwise map it out of 3.0 using a lerp
     var diff = (absd / 3.0);
 
-    if(diff < 0.1) {
-        return "#fff"; // solid white.
+    if(absd < 0.031) {
+        return "#fff"; // solid white. we good.
     }
 
     // Else lerp red
     var lerped = (1.0 - (diff)) * 255;
-    return "rgb(" + lerped + ", 0, 0)";
+    return "rgb(" + lerped.toFixed() + ", 0, 0)";
 }
 
 function getTable(assoc) {

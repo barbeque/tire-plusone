@@ -33,11 +33,11 @@ function getTable(assoc) {
     var rowCount = tireWidths.length;
     var columnCount = Object.keys(assoc[tireWidths[0]]).length;
 
-    var t = $("<table>");
+    var t = $("<table>").addClass('results-table');
 
     // Write the hed
     var r = $("<tr>");
-    $("<td>").text("&nbsp;").appendTo(r);
+    $("<td>").html("&nbsp;").appendTo(r);
     $.each(assoc[tireWidths[0]], function(section, item) {
         $("<td>").text(section).appendTo(r);
     });

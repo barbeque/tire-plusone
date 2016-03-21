@@ -10,9 +10,11 @@ function generateTable(oldWidth, oldRatio, oldWheel, newWheel) {
     var oldCircumference = calculateTireCircumference(oldWidth, oldRatio, oldWheel);
 
     // Build a 2D associative array
-    for(var newWidth in widths) {
+    for(var i in widths) {
+        var newWidth = widths[i];
         calculations[newWidth] = {};
-        for(var newSection in sections) {
+        for(var j in sections) {
+            var newSection = sections[j];
             var newCircumference = calculateTireCircumference(newWidth, newSection, newWheel);
             var difference = calculateCircumferenceDifferential(oldCircumference, newCircumference);
             calculations[newWidth][newSection] = difference;

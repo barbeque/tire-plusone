@@ -37,14 +37,13 @@ function mapValueToColour(val) {
         return "#ff0000";
     }
 
-    // Otherwise map it out of 3.0 using a lerp
-    var diff = (absd / 3.0);
-
     if(absd < 0.031) {
         return "#fff"; // solid white. we good.
     }
 
     // Else lerp red
+    var diff = (absd - 0.031)/2.7;
+    
     var lerped = (1.0 - (diff)) * 255;
     var redInHex = parseInt(lerped.toFixed()).toString(16);
     if(redInHex.length < 2) {

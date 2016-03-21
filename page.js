@@ -32,6 +32,16 @@ function getTableHtml(assoc) {
 
     var rowCount = tireWidths.length;
     var columnCount = Object.keys(assoc[tireWidths[0]]).length;
+
+    var t = $("<table>");
+
+    $.each(assoc, function(i, tireWidth) {
+        var r = $("<tr>");
+        $("td").text(tireWidth).appendTo(r);
+        r.appendTo(t);
+    });
+
+    return t.html();
 }
 
 $("#goButton").on("click", function(e) {

@@ -26,6 +26,25 @@ function generateTable(oldWidth, oldRatio, oldWheel, newWheel) {
     $("#results").append(html);
 }
 
+function mapValueToColour(val) {
+    // 0 = white
+    // > 3 = red
+    // < 3 = red
+
+    var absd = Math.abs(val);
+    if(absd > 3) {
+        // Solid red, don't use it.
+        return "#ff0000";
+    }
+
+    // Otherwise map it out of 3.0 using a lerp
+    var diff = (absd / 3.0);
+
+    var lerped = 1.0 - (diff);
+
+    return "rgb(255, " + lerped + ", " + lerped + ")";
+}
+
 function getTable(assoc) {
     // Probably breaks old browsers...
     var tireWidths = Object.keys(assoc);
@@ -51,7 +70,7 @@ function getTable(assoc) {
         // Second.. nth columns, the results
         $.each(tireWidth, function(j, differential) {
             var rounded = differential.toFixed(2);
-            $("<td>").text(rounded).appendTo(r);
+            $("<td>").text(rounded).attr('background-color', mapValueToColor(differential)).appendTo(r);
         });
         r.appendTo(t);
     });

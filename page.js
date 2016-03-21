@@ -35,6 +35,14 @@ function getTable(assoc) {
 
     var t = $("<table>");
 
+    // Write the hed
+    var r = $("<tr>");
+    $.each(assoc[tireWidths[0]], function(section, item) {
+        $("<td>").text(section).appendTo(r);
+    });
+    r.appendTo(t);
+
+    // Write the table body
     $.each(assoc, function(i, tireWidth) {
         var r = $("<tr>");
         // First column tire width

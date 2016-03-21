@@ -38,7 +38,7 @@ function mapValueToColour(val) {
     }
 
     if(absd < 0.031) {
-        return "#fff"; // solid white. we good.
+        return "#ffffff"; // solid white. we good.
     }
 
     // Start the bad ones

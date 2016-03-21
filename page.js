@@ -37,6 +37,7 @@ function getTable(assoc) {
 
     // Write the hed
     var r = $("<tr>");
+    $("<td>").text("&nbsp;").appendTo(r);
     $.each(assoc[tireWidths[0]], function(section, item) {
         $("<td>").text(section).appendTo(r);
     });

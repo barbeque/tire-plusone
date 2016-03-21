@@ -28,5 +28,9 @@ function getTableHtml(assoc) {
 }
 
 $("#goButton").on("click", function(e) {
-    generateTable();
+    var oldWidth = parseInt($("#oldWidth").val());
+    var oldRatio = parseInt($("#oldProfile").val());
+    var oldWheel = parseInt($("#oldWheelInches").val());
+    var newWheel = parseInt($("#newWheelInches").val());
+    generateTable(oldWidth, oldRatio, oldWheel, newWheel);
 });

@@ -41,10 +41,13 @@ function mapValueToColour(val) {
         return "#fff"; // solid white. we good.
     }
 
+    // Start the bad ones
+    var over = absd - 0.031;
+
+    // Figure out how red it is
+    var lerped = 255 - ((over / 0.20) * 255);
+
     // Else lerp red
-    var diff = (absd - 0.031)/2.7;
-    
-    var lerped = (1.0 - (diff)) * 255;
     var redInHex = parseInt(lerped.toFixed()).toString(16);
     if(redInHex.length < 2) {
         redInHex = "0" + redInHex; // pad

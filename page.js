@@ -37,7 +37,12 @@ function getTableHtml(assoc) {
 
     $.each(assoc, function(i, tireWidth) {
         var r = $("<tr>");
-        $("td").text(tireWidth).appendTo(r);
+        // First column tire width
+        $("<td>").text(i).appendTo(r);
+        // Second.. nth columns, the results
+        $.each(tireWidth, function(j, differential) {
+            $("<td>").text(differential).appendTo(r);
+        });
         r.appendTo(t);
     });
 

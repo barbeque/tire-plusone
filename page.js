@@ -46,7 +46,11 @@ function mapValueToColour(val) {
 
     // Else lerp red
     var lerped = (1.0 - (diff)) * 255;
-    return "rgb(" + lerped.toFixed() + ", 0, 0)";
+    var redInHex = lerped.toString(16);
+    if(redInHex.length < 2) {
+        redInHex = "0" + redInHex; // pad
+    }
+    return "#" + redInHex + "0000";
 }
 
 function getTable(assoc) {

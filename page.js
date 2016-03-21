@@ -45,7 +45,7 @@ function mapValueToColour(val) {
     var over = absd - 0.031;
 
     // Figure out how red it is
-    var lerped = 255 - ((over / 0.20) * 255);
+    var lerped = 128 - (((diff - 0.031) / 0.30) * 256);
 
     // Else lerp red
     var redInHex = parseInt(lerped.toFixed()).toString(16);

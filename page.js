@@ -1,6 +1,6 @@
 function generateTable(oldWidth, oldRatio, oldWheel, newWheel) {
     // Wipe out the table...
-    $("results").empty();
+    $("#results").empty();
 
     // TODO: Maybe just auto generate these instead of hardcoding
     var widths = [ 155, 165, 175, 185, 195, 205, 215, 225, 235, 245, 255 ];
@@ -23,7 +23,7 @@ function generateTable(oldWidth, oldRatio, oldWheel, newWheel) {
 
     // Write it out to the dom
     var html = getTable(calculations);
-    $("results").append(html);
+    $("#results").append(html);
 }
 
 function getTable(assoc) {

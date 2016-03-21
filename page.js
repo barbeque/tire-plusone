@@ -17,7 +17,7 @@ function generateTable(oldWidth, oldRatio, oldWheel, newWheel) {
             var newSection = sections[j];
             var newCircumference = calculateTireCircumference(newWidth, newSection, newWheel);
             var difference = calculateCircumferenceDifferential(oldCircumference, newCircumference);
-            calculations[newWidth][newSection] = difference;
+            calculations[newWidth][newSection] = difference - 1.0;
         }
     }
 
@@ -27,6 +27,11 @@ function generateTable(oldWidth, oldRatio, oldWheel, newWheel) {
 }
 
 function getTableHtml(assoc) {
+    // Probably breaks old browsers...
+    var tireWidths = Object.keys(assoc);
+
+    var rowCount = tireWidths.length;
+    var columnCount = Object.keys(assoc[tireWidths[0]]).length;
 }
 
 $("#goButton").on("click", function(e) {

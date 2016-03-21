@@ -50,7 +50,7 @@ function getTable(assoc) {
         $("<td>").text(i).appendTo(r);
         // Second.. nth columns, the results
         $.each(tireWidth, function(j, differential) {
-            var rounded = differential.ToFixed(2);
+            var rounded = differential.toFixed(2);
             $("<td>").text(rounded).appendTo(r);
         });
         r.appendTo(t);

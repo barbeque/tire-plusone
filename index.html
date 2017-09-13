@@ -12,20 +12,31 @@
         <p>This tool lets you figure out what size of tire you need in order to change your wheel size but maintain the original size's circumference and therefore reduce speedometer error.</p>
         <p>Try the <a href="/tire-calculator">tire calculator</a> for one-to-one tire size comparisons.</p>
         <form onsubmit="return false;">
-            <label for="oldWidth">Current Tire Width (mm)</label>
-            <input id="oldWidth" value="175"></input><br/>
-            <label for="oldProfile">Current Profile</label>
-            <input id="oldProfile" value="70"></input><br/>
-            <label for="oldWheelInches">Current Wheel Diameter (inches)</label>
-            <input id="oldWheelInches" value="13"></input><br/>
-            <label for="newWheelInches">New Wheel Diameter (inches)</label>
-            <input id="newWheelInches" value="14"></input><br/>
+            <table id="input-form">
+                <tr>
+                    <td><label for="oldWidth">Current Tire Width (mm)</label></td>
+                    <td><input id="oldWidth" value="175"></input></td>
+                </tr>
+                <tr>
+                    <td><label for="oldProfile">Current Profile</label></td>
+                    <td><input id="oldProfile" value="70"></input></td>
+                </tr>
+                <tr>
+                    <td><label for="oldWheelInches">Current Wheel Diameter (inches)</label></td>
+                    <td><input id="oldWheelInches" value="13"></input></td>
+                </tr>
+                <tr>
+                    <td><label for="newWheelInches">New Wheel Diameter (inches)</label></td>
+                    <td><input id="newWheelInches" value="14"></input></td>
+                </tr>
+            </table>
 
             <button type="button" id="goButton">Calculate</button>
         </form>
 
         <div id="results">
         </div>
+        
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
         <script src="tires.js"></script>
         <script src="page.js"></script>
@@ -49,6 +60,7 @@
 
         .results-table td {
             font-size: smaller;
+            text-align: center;
         }
         </style>
     </body>

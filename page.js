@@ -4,7 +4,7 @@ function generateTable(oldWidth, oldRatio, oldWheel, newWheel) {
 
     // TODO: Maybe just auto generate these instead of hardcoding
     var widths = [ 155, 165, 175, 185, 195, 205, 215, 225, 235, 245, 255 ];
-    var sections = [ 40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90 ];
+    var sections = [ 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90 ];
 
     var calculations = {};
     var oldCircumference = calculateTireCircumference(oldWidth, oldRatio, oldWheel);
